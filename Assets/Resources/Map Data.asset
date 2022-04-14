@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0993c62f7432a4c2a9665924e29a19b0, type: 3}
+  m_Name: Map Data
+  m_EditorClassIdentifier: 
+  enemyData:
+  - enemy: {fileID: 8268349995622841776, guid: 8c395b53660e84cbaa1c09bbdabc30b5, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    isAlive: 1
+  - enemy: {fileID: 2538403035499770095, guid: ecccec55cbfbf4a18b5e834a6acd3070, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    isAlive: 1
+  - enemy: {fileID: 2485088622075372021, guid: 45975bd2de5154aa98aa3cdf2b11e1a4, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    isAlive: 1
+  - enemy: {fileID: 8646994127285280310, guid: 4e6965e74c24d48ab848c94188515fec, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    isAlive: 1
+  - enemy: {fileID: 8646994127285280310, guid: 4e6965e74c24d48ab848c94188515fec, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    isAlive: 1
+  - enemy: {fileID: 4224874361408411533, guid: 8e8bdb51c5efb476782202a3813aaa1a, type: 3}
+    position: {x: 0, y: 0, z: 0}
+    isAlive: 1
+  playerPosition: {x: 0, y: 0, z: 0}
