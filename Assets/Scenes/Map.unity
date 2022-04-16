@@ -10785,7 +10785,7 @@ RectTransform:
   m_GameObject: {fileID: 806668082}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.06, y: 1.06, z: 1.06}
   m_Children:
   - {fileID: 982873241}
   - {fileID: 1470862826}
@@ -10797,7 +10797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: -599}
+  m_AnchoredPosition: {x: -16.959997, y: -599}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806668084
@@ -11828,7 +11828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111872698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.7, y: 1.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11848,6 +11848,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1637882837}
   cameraMoveSpeed: 0.5
+  cameraMaxX: 24.7
+  cameraMinX: -0.6
+  cameraMaxY: 1.2
+  cameraMinY: -44
 --- !u!1 &1158418480
 GameObject:
   m_ObjectHideFlags: 0
