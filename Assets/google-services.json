@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "397004816302",
+    "project_id": "irrationalfantasia",
+    "storage_bucket": "irrationalfantasia.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397004816302:android:7678a1a7a35b4f0e26123f",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.IrrationaLFantasiA"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397004816302-c4pohoojr487o0119663c5o5hv6eigts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCek5TVOFKclwRRXBxu-tQOQ90PGDUlpkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397004816302-c4pohoojr487o0119663c5o5hv6eigts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
