@@ -9,8 +9,8 @@ public class MapController : MonoBehaviour
     {
         if (SceneManager.sceneCount > 1)
         {
-            SceneManager.UnloadSceneAsync(1);
             SceneManager.UnloadSceneAsync(2);
+            SceneManager.UnloadSceneAsync(3);
         }
         UnDestroy.Instance.gameObject.SetActive(true);
     }

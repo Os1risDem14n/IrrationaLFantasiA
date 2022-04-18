@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
             //if (asyncOperation.isDone)
             //    SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
             UnDestroy.Instance.gameObject.SetActive(false);
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
         }
     }
 }

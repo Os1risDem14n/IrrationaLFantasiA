@@ -3,6 +3,7 @@ using UnityEngine;
 using Firebase;
 using Firebase.Auth;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AuthManager : MonoBehaviour
 {
@@ -110,6 +111,7 @@ public class AuthManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             statusText.text = "";
             statusText.text = "Logged In";
+            SceneManager.LoadScene(1);
         }
     }
     
@@ -202,7 +204,7 @@ public class AuthManager : MonoBehaviour
                         //Username is now set
                         //Now return to login screen
                         LoginScreen();
-                        statusText.text = "";
+                        statusText.text = "Welcome "+_username+" to IrrationaL FantasiA";
                     }
                 }
             }

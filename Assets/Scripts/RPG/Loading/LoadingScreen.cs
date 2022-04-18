@@ -27,7 +27,7 @@ public class LoadingScreen : MonoBehaviour
         //AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(2));
 
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(3);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(4);
 
         if (!asyncOperation.isDone)
         {

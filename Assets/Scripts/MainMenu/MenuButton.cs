@@ -16,6 +16,6 @@ public class MenuButton : MonoBehaviour
         if (unDestroy != null)
             Destroy(unDestroy.gameObject);
            
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadSceneAsync(2);
     }
 }

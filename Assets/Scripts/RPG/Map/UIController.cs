@@ -74,7 +74,7 @@ public class UIController : MonoBehaviour
     {
         Destroy(GameObject.FindObjectOfType<UnDestroy>().gameObject);
         playerController.ResetPlayer();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     void ShowMenu()

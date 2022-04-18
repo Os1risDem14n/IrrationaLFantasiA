@@ -165,7 +165,7 @@ public class BattleManager : Singleton<BattleManager>
             yield return new WaitForSecondsRealtime(5f);
             Time.timeScale = 1;
             //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(2);
 
         }    
         else if (state == BattleState.LOSE)
@@ -177,7 +177,7 @@ public class BattleManager : Singleton<BattleManager>
             IdentifyFightingCharacter.Instance.playerPrefab.GetComponent<CharacterLevel>().ResetLevel();
             yield return new WaitForSecondsRealtime(5f);
             Time.timeScale = 1;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
             
     }
