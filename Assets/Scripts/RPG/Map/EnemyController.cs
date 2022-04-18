@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour
 {
+    public enum EnemyID
+    {
+        Giant,
+        Boar,
+        Bat,
+        Dino,
+        Dragon,
+        Ghost
+    }
+
+    public EnemyID enemyID;
     public GameObject enemyPrefab;
     public bool isAlive = true;
     public int EXP;
