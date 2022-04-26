@@ -10,14 +10,7 @@ public class IdentifyFightingCharacter : Singleton<IdentifyFightingCharacter>
     public void SetPlayer(GameObject player)
     {
         playerPrefab = player;
-        CharacterStats character = playerPrefab.GetComponent<CharacterStats>();
-        UserData.Instance.userAttack = character.attack;
-        UserData.Instance.userDefense = character.defense;
-        UserData.Instance.userMagic = character.magic;
-        UserData.Instance.userMp = character.maxMP;
-        UserData.Instance.userHp = character.maxHP;
-        UserData.Instance.userMpCost = character.mpCost;
-        UserData.Instance.userPosition = player.transform.position;
+        LoadData();
     }
 
     public void SetEnemy(GameObject enemy)
@@ -30,8 +23,23 @@ public class IdentifyFightingCharacter : Singleton<IdentifyFightingCharacter>
         CharacterLevel characterLevel = playerPrefab.GetComponent<CharacterLevel>();
         characterLevel.levelEXP += exp;
         characterLevel.UpdateLevel();
-        UserData.Instance.userLevel = characterLevel.Level;
-        UserData.Instance.userExp = characterLevel.levelEXP;
-        UserData.Instance.userPoint = characterLevel.Point;
+        UserData.Instance.SaveUserLevel(characterLevel);
+    }
+
+    public void LoadData()
+    {
+        CharacterStats character = playerPrefab.GetComponent<CharacterStats>();
+        CharacterLevel characterLevel = playerPrefab.GetComponent<CharacterLevel>();
+        
+        character.attack = UserData.Instance.userAttack;
+        character.defense = UserData.Instance.userDefense;
+        character.magic = UserData.Instance.userMagic;
+        character.maxMP = UserData.Instance.userMp;
+        character.maxHP = UserData.Instance.userHp;
+        character.mpCost = UserData.Instance.userMpCost;
+        character.transform.position = UserData.Instance.userPosition;
+        characterLevel.Level = UserData.Instance.userLevel;
+        characterLevel.levelEXP = UserData.Instance.userExp;
+        characterLevel.Point = UserData.Instance.userPoint;
     }
 }

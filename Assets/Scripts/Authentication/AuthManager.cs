@@ -80,14 +80,6 @@ public class AuthManager : MonoBehaviour
         //Call the register coroutine passing the email, password, and username
         StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
     }
-    
-    public void SignOutButton()
-    {
-        Auth.SignOut();
-        LoginScreen();
-        ClearLoginFields();
-        ClearRegisterFields();
-    }
 
     private IEnumerator Login(string _email, string _password)
     {
@@ -132,10 +124,16 @@ public class AuthManager : MonoBehaviour
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
             statusText.text = "User signed in successfully: "+User.DisplayName;
             DatabaseManager.Instance.InitializeFirebaseDatabase();
-            UserData.Instance.ResetData();
+            StartCoroutine(DatabaseManager.Instance.LoadData());
             yield return new WaitForSeconds(2);
             SceneManager.LoadScene(1);
         }
+    }
+    
+    public void SignOutButton()
+    {
+        Auth.SignOut();
+        SceneManager.LoadScene(0);
     }
     
     public void LoginScreen()

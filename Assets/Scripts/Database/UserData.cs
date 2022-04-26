@@ -18,11 +18,25 @@ public class UserData : Singleton<UserData>
     public int userMpCost;
     public int userDefense;
 
-    public void LoadData()
+    public void SaveUserStats(CharacterStats character)
     {
+        userAttack = character.attack;
+        userDefense = character.defense;
+        userMagic = character.magic;
+        userMp = character.maxMP;
+        userHp = character.maxHP;
+        userMpCost = character.mpCost;
+        userPosition = character.transform.position;
     }
 
-    public void ResetData()
+    public void SaveUserLevel(CharacterLevel characterLevel)
+    {
+        userLevel = characterLevel.Level;
+        userExp = characterLevel.levelEXP;
+        userPoint = characterLevel.Point;
+    }
+
+    public void InitData()
     {
         userAttack = PlayerPrefs.GetInt("attack");
         userMagic = PlayerPrefs.GetInt("magic");
@@ -34,5 +48,15 @@ public class UserData : Singleton<UserData>
         userExp = 0;
         userPoint = 0;
         userCoin = 0;
+    }
+
+    public void LoadFromJSON(string jsonString)
+    {
+        JsonUtility.FromJsonOverwrite(jsonString, this);
+    }
+ 
+    public string SaveToJSON()
+    {
+        return JsonUtility.ToJson(this);
     }
 }

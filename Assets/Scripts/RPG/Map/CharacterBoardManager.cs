@@ -156,16 +156,8 @@ public class CharacterBoardManager : MonoBehaviour
         character.magic = magic;
         character.defense = defense;
         level.Point = point;
-        UserData.Instance.userLevel = level.Level;
-        UserData.Instance.userExp = level.levelEXP;
-        UserData.Instance.userPoint = level.Point;
-        UserData.Instance.userAttack = character.attack;
-        UserData.Instance.userDefense = character.defense;
-        UserData.Instance.userMagic = character.magic;
-        UserData.Instance.userMp = character.maxMP;
-        UserData.Instance.userHp = character.maxHP;
-        UserData.Instance.userMpCost = character.mpCost;
-        UserData.Instance.userPosition = IdentifyFightingCharacter.Instance.playerPrefab.transform.position;
+        UserData.Instance.SaveUserLevel(level);
+        UserData.Instance.SaveUserStats(character);
         DatabaseManager.Instance.SaveData();
     }
 }
