@@ -224,8 +224,10 @@ public class AuthManager : MonoBehaviour
                     {
                         //Username is now set
                         //Now return to login screen
-                        LoginScreen();
                         statusText.text = "Welcome "+_username+" to IrrationaL FantasiA";
+                        yield return new WaitForSeconds(2);
+                        statusText.text = "";
+                        LoginScreen();
                     }
                 }
             }
