@@ -43,4 +43,11 @@ public class EnemyMapData : Singleton<EnemyMapData>
             EnemyData.Add(enemyData);
         }
     }
+
+    public IEnumerator RespawnEnemy(GameObject enemy, int time)
+    {
+        enemy.SetActive(false);
+        yield return new WaitForSeconds(time+60);
+        enemy.SetActive(true);
+    }
 }

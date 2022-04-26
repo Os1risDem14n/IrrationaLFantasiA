@@ -18,12 +18,13 @@ public class EnemyController : MonoBehaviour
     public EnemyID enemyID;
     public GameObject enemyPrefab;
     public bool isAlive = true;
+    public int timeRespawn;
     public int EXP;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            gameObject.SetActive(false);
+            StartCoroutine(EnemyMapData.Instance.RespawnEnemy(gameObject, timeRespawn));
             isAlive = false;
             IdentifyFightingCharacter.Instance.SetEnemy(enemyPrefab);
             //AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
