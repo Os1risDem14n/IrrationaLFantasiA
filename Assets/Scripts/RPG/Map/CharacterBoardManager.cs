@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Serialization;
+
 public class CharacterBoardManager : MonoBehaviour
 {
     [Header("Character Info Text")]
@@ -15,12 +17,17 @@ public class CharacterBoardManager : MonoBehaviour
     public TMP_Text characterDefense;
     public TMP_Text characterPoint;
 
-    [Header("Plus Point Button")]
+    [Header("Point Button")]
     public Button plusHPButton;
     public Button plusMPButton;
     public Button plusAttackButton;
     public Button plusMagicButton;
-    public Button plusDefenseButotn;
+    public Button plusDefenseButton;
+    public Button minusHPButton;
+    public Button minusMPButton;
+    public Button minusAttackButton;
+    public Button minusMagicButton;
+    public Button minusDefenseButton;
 
     [Header("Stat per Point")]
     public int HP;
@@ -46,6 +53,7 @@ public class CharacterBoardManager : MonoBehaviour
     private int magic;
     private int defense;
     private int point;
+    private int maxPoint;
 
     private void OnEnable()
     {
@@ -54,10 +62,15 @@ public class CharacterBoardManager : MonoBehaviour
         characterLevel.text = "Level " + level.Level + "     " + level.levelEXP + " / " + level.levelupEXP[level.Level];
 
         plusAttackButton.GetComponent<Button>().onClick.AddListener(() => PlusButton(charText.Attack));
-        plusDefenseButotn.GetComponent<Button>().onClick.AddListener(() => PlusButton(charText.Defense));
+        plusDefenseButton.GetComponent<Button>().onClick.AddListener(() => PlusButton(charText.Defense));
         plusHPButton.GetComponent<Button>().onClick.AddListener(() => PlusButton(charText.HP));
         plusMagicButton.GetComponent<Button>().onClick.AddListener(() => PlusButton(charText.Magic));
         plusMPButton.GetComponent<Button>().onClick.AddListener(() => PlusButton(charText.MP));
+        minusAttackButton.GetComponent<Button>().onClick.AddListener(() => MinusButton(charText.Attack));
+        minusDefenseButton.GetComponent<Button>().onClick.AddListener(() => MinusButton(charText.Defense));
+        minusHPButton.GetComponent<Button>().onClick.AddListener(() => MinusButton(charText.HP));
+        minusMagicButton.GetComponent<Button>().onClick.AddListener(() => MinusButton(charText.Magic));
+        minusMPButton.GetComponent<Button>().onClick.AddListener(() => MinusButton(charText.MP));
     }
 
     private void SetText(charText charText,int stat)
@@ -123,6 +136,45 @@ public class CharacterBoardManager : MonoBehaviour
                 break;
         }
     }
+    
+    private void MinusButton(charText charText)
+    {
+        if (point > maxPoint-1)
+            return;
+        switch (charText)
+        {
+            case charText.HP:
+                hp -= HP;
+                point++;
+                SetText(charText.HP, hp);
+                SetText(charText.Point, point);
+                break;
+            case charText.MP:
+                mp -= MP;
+                point++;
+                SetText(charText.MP, mp);
+                SetText(charText.Point, point);
+                break;
+            case charText.Attack:
+                attack -= Attack;
+                point++;
+                SetText(charText.Attack, attack);
+                SetText(charText.Point, point);
+                break;
+            case charText.Magic:
+                magic -= Magic;
+                point++;
+                SetText(charText.Magic, magic);
+                SetText(charText.Point, point);
+                break;
+            case charText.Defense:
+                defense -= Defense;
+                point++;
+                SetText(charText.Defense, defense);
+                SetText(charText.Point, point);
+                break;
+        }
+    }
 
     public void GetCharacterData()
     {
@@ -139,6 +191,7 @@ public class CharacterBoardManager : MonoBehaviour
         magic = character.magic;
         defense = character.defense;
         point = level.Point;
+        maxPoint = level.Point;
 
         SetText(charText.HP, hp);
         SetText(charText.MP, mp);

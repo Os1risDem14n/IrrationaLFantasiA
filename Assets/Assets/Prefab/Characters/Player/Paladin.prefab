@@ -119,11 +119,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Paladin
   iconImage: {fileID: 4344580066947705144, guid: 1c594635f1a8e432db270e299790f365, type: 3}
-  maxHP: 300
+  maxHP: 400
   currentHP: 200
   maxMP: 50
   currentMP: 50
-  attack: 100
+  attack: 200
   magic: 150
   mpCost: 25
   defense: 10
@@ -158,6 +158,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelupEXP: 3200000064000000c80000002c010000
-  Level: 0
-  levelEXP: 0
+  Level: 3
+  levelEXP: 250
   Point: 0
