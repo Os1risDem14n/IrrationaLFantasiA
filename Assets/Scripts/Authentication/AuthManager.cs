@@ -38,7 +38,7 @@ public class AuthManager : MonoBehaviour
             dependencyStatus = task.Result;
             if (dependencyStatus == DependencyStatus.Available)
             {
-                //If they are avalible Initialize Firebase
+                //If they are available Initialize Firebase
                 InitializeFirebase();
             }
             else
@@ -54,6 +54,19 @@ public class AuthManager : MonoBehaviour
         //Set the authentication instance object
         Auth = FirebaseAuth.DefaultInstance;
     }
+    
+    public void ClearLoginFields()
+    {
+        emailLoginField.text = "";
+        passwordLoginField.text = "";
+    }
+    public void ClearRegisterFields()
+    {
+        usernameRegisterField.text = "";
+        emailRegisterField.text = "";
+        passwordRegisterField.text = "";
+        passwordRegisterVerifyField.text = "";
+    }
 
     //Function for the login button
     public void LoginButton()
@@ -66,6 +79,14 @@ public class AuthManager : MonoBehaviour
     {
         //Call the register coroutine passing the email, password, and username
         StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
+    }
+    
+    public void SignOutButton()
+    {
+        Auth.SignOut();
+        LoginScreen();
+        ClearLoginFields();
+        ClearRegisterFields();
     }
 
     private IEnumerator Login(string _email, string _password)
@@ -109,8 +130,10 @@ public class AuthManager : MonoBehaviour
             //Now get the result
             User = loginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
-            statusText.text = "";
-            statusText.text = "Logged In";
+            statusText.text = "User signed in successfully: "+User.DisplayName;
+            DatabaseManager.Instance.InitializeFirebaseDatabase();
+            UserData.Instance.ResetData();
+            yield return new WaitForSeconds(2);
             SceneManager.LoadScene(1);
         }
     }

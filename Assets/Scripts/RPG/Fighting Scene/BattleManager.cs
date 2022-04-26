@@ -162,6 +162,7 @@ public class BattleManager : Singleton<BattleManager>
         {
             dialogueText.text = "Congratz, you won the battle";
             IdentifyFightingCharacter.Instance.UpdateEXP(enemyStats.EXP);
+            DatabaseManager.Instance.SaveData();
             yield return new WaitForSecondsRealtime(5f);
             Time.timeScale = 1;
             //SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0));
@@ -173,6 +174,7 @@ public class BattleManager : Singleton<BattleManager>
             dialogueText.text = "Noob, you lost the battle";
             playerStats.ResetData();
             Player.GetComponent<CharacterLevel>().ResetLevel();
+            DatabaseManager.Instance.SaveData();
             IdentifyFightingCharacter.Instance.playerPrefab.GetComponent<CharacterStats>().ResetData();
             IdentifyFightingCharacter.Instance.playerPrefab.GetComponent<CharacterLevel>().ResetLevel();
             yield return new WaitForSecondsRealtime(5f);

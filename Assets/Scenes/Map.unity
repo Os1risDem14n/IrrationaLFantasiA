@@ -51012,6 +51012,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2485088622075372020, guid: 45975bd2de5154aa98aa3cdf2b11e1a4, type: 3}
+      propertyPath: enemyID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485088622075372020, guid: 45975bd2de5154aa98aa3cdf2b11e1a4, type: 3}
       propertyPath: isAlive
       value: 1
       objectReference: {fileID: 0}
@@ -51086,6 +51090,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2538403035499770094, guid: ecccec55cbfbf4a18b5e834a6acd3070, type: 3}
+      propertyPath: enemyID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2538403035499770094, guid: ecccec55cbfbf4a18b5e834a6acd3070, type: 3}
       propertyPath: isAlive
       value: 1
       objectReference: {fileID: 0}
@@ -51122,6 +51130,10 @@ PrefabInstance:
     - target: {fileID: 2863029959425095129, guid: f64274a564a5842e2aa066b46c46158b, type: 3}
       propertyPath: EXP
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2863029959425095129, guid: f64274a564a5842e2aa066b46c46158b, type: 3}
+      propertyPath: enemyID
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2863029959425095129, guid: f64274a564a5842e2aa066b46c46158b, type: 3}
       propertyPath: isAlive
@@ -51308,6 +51320,10 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8268349995622841775, guid: 8c395b53660e84cbaa1c09bbdabc30b5, type: 3}
+      propertyPath: enemyID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8268349995622841775, guid: 8c395b53660e84cbaa1c09bbdabc30b5, type: 3}
       propertyPath: isAlive
       value: 1
       objectReference: {fileID: 0}
@@ -51380,6 +51396,10 @@ PrefabInstance:
     - target: {fileID: 8646994127285280309, guid: 4e6965e74c24d48ab848c94188515fec, type: 3}
       propertyPath: EXP
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8646994127285280309, guid: 4e6965e74c24d48ab848c94188515fec, type: 3}
+      propertyPath: enemyID
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8646994127285280309, guid: 4e6965e74c24d48ab848c94188515fec, type: 3}
       propertyPath: isAlive
